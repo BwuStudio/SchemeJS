@@ -6,7 +6,7 @@ const _NODE_ = Symbol('node')
 
 const _addName = (a) => {
     const b = a
-    b[_NODE_ ] = true
+    b[_NODE_] = true
     return b
 }
 
@@ -14,17 +14,18 @@ const node = (value, left, right) => (
     list(value, left, right)
 )
 
-const get_node_value = (node) => (
+const getNodeValue = (node) => (
     cdr(node)
 )
 
-const to_left = (node)=>(
+const getLeft = (node)=>(
     cdr(car(node))
 )
 
-const to_left = (node)=>(
+const getRight = (node)=>(
     cdr(car(car(node)))
 )
 
-const is_left
+
+
 
