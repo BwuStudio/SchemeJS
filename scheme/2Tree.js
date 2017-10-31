@@ -32,8 +32,6 @@ const getRight = (node) => (
     cdr(car(car(node)))
 )
 
-tst
-
 
 
 
