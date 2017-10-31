@@ -14,18 +14,25 @@ const node = (value, left, right) => (
     list(value, left, right)
 )
 
+const isNode = (node) => (
+    typeof node !== 'function' ? false
+        : node[_NODE_] === true ? true
+            : fasle
+)
+
 const getNodeValue = (node) => (
     cdr(node)
 )
 
-const getLeft = (node)=>(
+const getLeft = (node) => (
     cdr(car(node))
 )
 
-const getRight = (node)=>(
+const getRight = (node) => (
     cdr(car(car(node)))
 )
 
+test
 
 
 
