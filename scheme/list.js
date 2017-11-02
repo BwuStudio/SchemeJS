@@ -16,7 +16,7 @@ const isEnd = (m) => (
  * @returns {list} (...arg)
  */
 const List = (...arg) => (
-    arg[0] ? cons(arg[0], list(...arg.slice(1)))
+    arg[0] ? Cons(arg[0], List(...arg.slice(1)))
         : _END_
 )
 
@@ -33,7 +33,7 @@ const getFirst = (list) => (cdr(list))
  * @returns {*}
  */
 const getLast = (list) => (
-    isEnd(car(list)) ? car(list)
+    isEnd(car(list)) ? cdr(list)
         : getLast(car(list))
 )
 
@@ -56,7 +56,7 @@ const pop = (list) => (
  */
 const push = (list, value) => (
     isEnd(list) ? Cons(value, _END_)
-        : Cons(cdr(list), push(car(list)))
+        : Cons(cdr(list), push(car(list),value))
 )
 
 /**
@@ -76,9 +76,9 @@ const shift = (list) => (
  * @param {*} value 
  * @returns {list}
  */
-const unshift = (list,value) => (
-    isEnd(list)?Cons(value,list)
-    :Cons(value,unshift(car(list),cdr(list)))
+const unshift = (list, value) => (
+    isEnd(list) ? Cons(value, list)
+        : Cons(value, unshift(car(list), cdr(list)))
 )
 
-module.exports = { List, isEnd, _END_ }
+module.exports = { List, isEnd, _END_, push, pop, shift, unshift, getFirst, getLast }

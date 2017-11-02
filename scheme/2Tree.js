@@ -1,5 +1,5 @@
-const { cons, cdr, car } = require('./cons')
-const { list } = require('./scheme/struct')
+const { Cons, cdr, car } = require('./cons')
+const { list } = require('./scheme/list')
 
 const _BLANK_ = Symbol('blank')
 const _NODE_ = Symbol('node')
