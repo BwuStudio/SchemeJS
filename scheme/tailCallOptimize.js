@@ -1,3 +1,5 @@
+export defalut tailCallOptimize
+
 function tailCallOptimize(f) {  
   let value
   let active = false
