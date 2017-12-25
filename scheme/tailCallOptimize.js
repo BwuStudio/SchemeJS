@@ -1,4 +1,4 @@
-export defalut tailCallOptimize
+export default tailCallOptimize
 
 function tailCallOptimize(f) {  
   let value
